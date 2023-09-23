@@ -1,0 +1,80 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper]{geometry} % a package for setting layout and margins for your thesis 
+\usepackage[utf8]{inputenc} % standard encoding since 2018 (can be commented out?)
+\usepackage[T1]{fontenc} % absolutely critical for *hyphenation* of words with non-ASCII letters.
+\usepackage{times} % typeset text in Times Roman instead of Computer Modern (EC)
+
+% babel
+\usepackage[estonian, english]{babel}
+\usepackage{csquotes}
+\addto\captionsestonian{%
+  \renewcommand{\refname}{Viidatud kirjandus}%
+  \renewcommand{\appendixname}{Lisad}%
+}
+
+% viitamine
+\usepackage[giveninits=true]{biblatex}
+\DefineBibliographyStrings{estonian}{and={ja}}
+\addbibresource{bibliography.bib}
+
+% general packages for math
+\usepackage{amsmath} 
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+% print a dot instead of colon in table or figure captions
+\usepackage[labelsep=period]{caption}
+
+% packages for building tables and tabulars 
+\usepackage{array}
+\usepackage{tabu}   % wide lines in tables
+\usepackage{xspace} % non-eatable spaces in macros
+\usepackage{float}  % float options
+
+% including graphical images and setting the figure directory
+\usepackage{graphicx}
+\graphicspath{{joonised/}}
+
+% packages for getting clickable links in PDF file
+\usepackage[hidelinks]{hyperref}
+\usepackage[all]{hypcap}
+
+% statistilised operaatorid
+\DeclareMathOperator*{\MEAN}{\mathbf{E}}
+\DeclareMathOperator*{\VARIANCE}{\mathbf{D}}
+\newcommand{\mean}[1]{\MEAN\left[#1\right]}
+\newcommand{\variance}[1]{\VARIANCE\left[#1\right]}
+\newcommand{\prob}[1]{\Pr\left[#1\right]}
+
+% kvaliteedimõõtude definitsioonid
+\newcommand{\accuracy}{Acc}
+\newcommand{\precision}{Prec}
+\newcommand{\recall}{Rec}
+
+\begin{document}
+
+% tiitelleht
+\include{tiitelleht}
+
+% abstrakt
+\include{abstrakt}
+
+% sisukord
+\tableofcontents
+
+% töö ise
+\include{sissejuhatus}
+\include{taust}
+\include{mõõtude_veahinnangud}
+\include{mõõtude_võrdlus}
+\include{kokkuvõte}
+
+% viited
+\newpage
+\printbibliography[title={Viidatud kirjandus}]
+
+% lisad
+\include{lisad}
+
+\end{document}
