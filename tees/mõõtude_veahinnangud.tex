@@ -46,11 +46,11 @@ Tulemuse~\eqref{eq:täpsus tõenäosusesitus} põhjal saame hinnata täpsust~\eq
     \widehat{\precision} = \frac{\frac{1}{N} \cdot \sum \limits_{i = 1}^{N} [a_i = 1] \cdot [y_i = 1]}{\frac{1}{N} \cdot \sum \limits_{i = 1}^{N} [a_i = 1]} = \frac{\sum \limits_{i = 1}^{N} [a_i = 1] \cdot [y_i = 1]}{\sum \limits_{i = 1}^{N} [a_i = 1]}\enspace.
 \end{equation}
 
-Saagis on päris positiivsete klassifikatsioonide sagedus positiivsete andmepunktide seast. Sarnaselt täpsuse esitusele tõenäosuste kaudu \eqref{eq:täpsus tõenäosusesitus} esitame ka saagise tõenäosuste kaudu
+Saagis on päris positiivsete klassifikatsioonide sagedus positiivsete andmepunktide seast. Sarnaselt täpsuse esitusele tõenäosuste kaudu~\eqref{eq:täpsus tõenäosusesitus} esitame ka saagise tõenäosuste kaudu
 \begin{equation*}
     \recall = \mean{A = Y | Y = 1} = \frac{\prob{Y = 1 \land A = 1}}{\prob{Y = 1}} \enspace,
 \end{equation*}
-mille põhjal saame saagise \eqref{eq:saagis} lähendi üle valimi arvutada järgnevalt
+mille põhjal saame saagise~\eqref{eq:saagis} lähendi üle valimi arvutada järgnevalt
 \begin{equation}
     \label{eq:saagis lähend}
     \widehat{\recall} = \frac{\frac{1}{N} \cdot \sum \limits_{i = 1}^{N} [a_i = 1] \cdot [y_i = 1]}{\frac{1}{N} \cdot \sum \limits_{i = 1}^{N} [y_i = 1]} = \frac{\sum \limits_{i = 1}^{N} [a_i = 1] \cdot [y_i = 1]}{\sum \limits_{i = 1}^{N} [y_i = 1]} \enspace.
@@ -64,7 +64,7 @@ Sellisel kujul lähendite tõenäosuslik hindamine võib olla keeruline, sest ni
     \item Kordame kuni on leitud soovitud koguses tingimusele vastavaid andmepunkte.
 \end{enumerate}
 
-Valikumeetodi põhjal leiame valimi $A^{+}$, mis koosneb positiivseks klassifitseeritud andmepunktidest, ning valimi $Y^{+}$, mis koosneb positiivse klassiga andmepunktidest. Kasutades vastavaid valimeid avaldame lähendid~\eqref{eq:täpsus lähend} ja~\eqref{eq:saagis lähend} õigsusele~\eqref{eq:eq:õigsus lähend} sarnasel kujul
+Valikumeetodi põhjal leiame valimi $A^{+}$, mis koosneb positiivseks klassifitseeritud andmepunktidest, ning valimi $Y^{+}$, mis koosneb positiivse klassiga andmepunktidest. Kasutades vastavaid valimeid avaldame lähendid~\eqref{eq:täpsus lähend} ja~\eqref{eq:saagis lähend} õigsusele~\eqref{eq:õigsus lähend} sarnasel kujul
 \begin{align}
     \widehat{\precision} &= \frac{1}{| A^{+} |} \cdot \sum_{i \in A^{+}} [y_i = 1] \enspace, \label{eq:täpsus tinglik lähend}\\
     \widehat{\recall} &= \frac{1}{|Y^{+}|} \cdot \sum_{i \in Y^{+}} [a_i = 1] \label{eq:saagis tinglik lähend}\enspace.
@@ -92,7 +92,7 @@ Kuna Bernoulli jaotusega juhuslike suuruste jaoks leiduvad tõkked $0 \leq Z_i \
 \end{equation}
 mille põhjal saame hinnata lähendi $\widehat{\accuracy}$ absoluutse vea alumise tõkke tõenäosust. Kui sätime võrratuse~\eqref{eq:höffding absoluutne viga} parema poole võrdseks olulisusega $\alpha$ avaldub veahinnangu alumine tõke kujul
 \begin{equation*}
-     \varepsilon := \frac{c}{N} = \sqrt{- \frac{1}{2 N} \cdot \ln{\left( \frac{\alpha}{2} \right)}} \enspace.
+     \varepsilon \coloneqq \frac{c}{N} = \sqrt{- \frac{1}{2 N} \cdot \ln{\left( \frac{\alpha}{2} \right)}} \enspace.
 \end{equation*}
 Tulemuse põhjal saame arvutada valimi vajaliku suuruse
 \begin{equation*}
@@ -160,7 +160,7 @@ Absoluutse vea tõkkeks $\varepsilon$ võrrandist~\eqref{eq:binoomjaotus absoluu
     \label{eq:binoomjaotus absoluutne viga tõke}
     \varepsilon = \max \left( \accuracy - \frac{q_1}{N} , \frac{q_2}{N} - \accuracy \right) \enspace.
 \end{equation}
-Parameetri $N$ kasvades koondub binoomjaotus normaaljaotuseks~\cite{tõenäosusteooria-algkursus}. Seega suuremate $N$ väärtuste puhul on binoomjaotus sümmeetriline, järelikult erinevad $q_1$ ja $q_2$ põhjal arvutatud veahinnangute väärtused tegelikkuses vähe. Tulemust \eqref{eq:binoomjaotus absoluutne viga tõke} kasutades saame arvutada vajaliku valim suuruse soovitud olulisuse suhtes, kuid selle jaoks peame oletama mudeli tegelikku õigsust $\accuracy$.
+Parameetri $N$ kasvades koondub binoomjaotus normaaljaotuseks~\cite{tõenäosusteooria-algkursus}. Seega suuremate $N$ väärtuste puhul on binoomjaotus sümmeetriline, järelikult erinevad $q_1$ ja $q_2$ põhjal arvutatud veahinnangute väärtused tegelikkuses vähe. Tulemust~\eqref{eq:binoomjaotus absoluutne viga tõke} kasutades saame arvutada vajaliku valim suuruse soovitud olulisuse suhtes, kuid selle jaoks peame oletama mudeli tegelikku õigsust $\accuracy$.
 
 \begin{table}[H]
     \centering
